@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact Card</title>
+	<link rel="stylesheet" href="contactcard.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$('#form1').submit(function(){
+					$('#create').append("<div class='box'><p>" + $('#name1').val() + " " + $('#name2').val() + "</p><p>Click For Description</P></div>");
+					$("#create :last-child").val($("#description").val());
+					return false;
+				});
+	
+
+		$(document).on('click','#create div',function(){
+			// var code = $('#description').val() 
+			$(this).text($(this).val());
+		});
+	});
+		
+	</script>
+</head>
+<body>
+	<div id='container'>
+		<div id="header">
+		<h2>The Coding Dojo Contact Page</h2>
+		<form>
+		  <input type="text" name="search" placeholder="Search..">
+		</form>
+		</div>
+		<form id="form1">
+			First Name:<input id="name1" class="text_input" type="text" name="FirstName" required=""><br>
+			Last Name:<input id="name2" class="text_input" type="text" name="Lastname" required=""><br>
+			Description:<br><input type="text " id="description" class="text_input" name="description" placeholder="Enter Description"><br>
+			<input type='submit' value='Add User'>
+			</form>
+		<div id="create">
+			<!-- <form id="form2">
+				<textarea id="name4" placeholder="click for any description"></textarea>
+			</form> -->
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
